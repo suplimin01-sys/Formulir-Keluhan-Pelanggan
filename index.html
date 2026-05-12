@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Keluhan Pelanggan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header id="formHeader">
+            <h1>Layanan Keluhan Pelanggan</h1>
+            <p>Sampaikan keluhan Anda untuk membantu kami menjadi lebih baik.</p>
+        </header>
+
+        <!-- Form Input -->
+        <form id="complaintForm">
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" required placeholder="Masukkan nama Anda">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="contoh@email.com">
+            </div>
+
+            <div class="form-group">
+                <label for="telepon">Nomor Telepon</label>
+                <input type="tel" id="telepon" name="telepon" required placeholder="08xxxxxxxxxx">
+            </div>
+
+            <div class="form-group">
+                <label for="kategori">Kategori Keluhan</label>
+                <select id="kategori" name="kategori" required>
+                    <option value="" disabled selected>Pilih Kategori</option>
+                    <option value="Layanan">Layanan</option>
+                    <option value="Produk">Produk</option>
+                    <option value="Teknis">Teknis</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="pesan">Detail Keluhan</label>
+                <textarea id="pesan" name="pesan" rows="5" required placeholder="Jelaskan masalah Anda..."></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn">Kirim Keluhan</button>
+        </form>
+
+        <!-- Status Pesan -->
+        <div id="statusMessage" class="hidden"></div>
+
+        <!-- Tampilan Data Setelah Kirim -->
+        <div id="resultDisplay" class="hidden">
+            <div class="success-icon">✓</div>
+            <h3>Data Berhasil Dikirim</h3>
+            <div id="summaryContent"></div>
+            <button onclick="window.location.reload()" class="btn-reload">Kirim Keluhan Baru</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
